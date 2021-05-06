@@ -1,7 +1,7 @@
 <?php
-namespace Pipefy;
+namespace Pipefy\Pipefy;
 
-use Pipefy\APIObject;
+use Pipefy\Pipefy\APIObject;
 
 class PhaseDetail extends APIObject
 {

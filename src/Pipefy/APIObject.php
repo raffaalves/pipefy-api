@@ -1,5 +1,5 @@
 <?php
-namespace Pipefy;
+namespace Pipefy\Pipefy;
 
 use Pipefy\Pipefy;
 

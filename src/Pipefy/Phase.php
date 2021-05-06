@@ -1,7 +1,7 @@
 <?php
-namespace Pipefy;
+namespace Pipefy\Pipefy;
 
-use Pipefy\APIObject;
+use Pipefy\Pipefy\APIObject;
 
 class Phase extends APIObject {
     public $id;

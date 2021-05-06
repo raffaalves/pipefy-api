@@ -1,9 +1,10 @@
 <?php
-namespace Pipefy;
+namespace Pipefy\Pipefy;
 
-use Pipefy\APIObject;
+use Pipefy\Pipefy\APIObject;
 
-class Card extends APIObject {
+class Card extends APIObject
+{
     public $id;
     public $title;
     public $current_phase_id;
@@ -35,7 +36,8 @@ class Card extends APIObject {
     /**
      * @param null $data mixed
      */
-    function __construct($data = null) {
+    function __construct($data = null)
+    {
         if ($data != null) {
             $this->assign_results($data);
         }
@@ -46,7 +48,8 @@ class Card extends APIObject {
      * @param null $card_id mixed
      * @return $this
      */
-    public function fetch($card_id = null) {
+    public function fetch($card_id = null)
+    {
         if ($card_id == null)
             $card_id = $this->id;
 
@@ -74,7 +77,8 @@ class Card extends APIObject {
      * @param $parent_card_id int   If not null, the connected card will be created.
      * @return $this
      */
-    public function create_card ($title, $pipe_id, $field_values, $parent_card_id) {
+    public function create_card($title, $pipe_id, $field_values, $parent_card_id)
+    {
         if ($parent_card_id == null) {
             //creating common card
             $card["card"]["title"] = $title;
@@ -95,8 +99,7 @@ class Card extends APIObject {
             $this->parse_property("checklists", "Checklist");
 
             return $this;
-        }
-        else {
+        } else {
             //create connected card
             $resp = $this->send_post($this->endpoint . "cards/" . $parent_card_id . "/create_connected_card.json?pipe_id=" . $pipe_id, null, null);
 
@@ -111,7 +114,7 @@ class Card extends APIObject {
 
 
             //set field values
-            foreach($field_values as $key => $field) {
+            foreach ($field_values as $key => $field) {
                 $fieldData = array(
                     "card_id" => $this->id,
                     "field_id" => $field["field_id"],
@@ -125,7 +128,7 @@ class Card extends APIObject {
             $this->fetch($this->id);
 
             //moving to the first non-draft phase
-            $this->send_put($this->endpoint . "cards/".$this->id."/jump_to_phase/".$this->next_phase->id.".json", array("application/x-www-form-urlencoded"), array("source" => "connected_card"));
+            $this->send_put($this->endpoint . "cards/" . $this->id . "/jump_to_phase/" . $this->next_phase->id . ".json", array("application/x-www-form-urlencoded"), array("source" => "connected_card"));
 
             //sync card data
             $this->fetch($this->id);
@@ -135,8 +138,9 @@ class Card extends APIObject {
     }
 
 
-    public function jump_to_phase($phase_id) {
-        $this->send_put($this->endpoint . "cards/".$this->id."/jump_to_phase/".$phase_id.".json", array("application/x-www-form-urlencoded"), array());
+    public function jump_to_phase($phase_id)
+    {
+        $this->send_put($this->endpoint . "cards/" . $this->id . "/jump_to_phase/" . $phase_id . ".json", array("application/x-www-form-urlencoded"), array());
 
         return $this->fetch();
     }
@@ -145,7 +149,8 @@ class Card extends APIObject {
     /**
      * @return $this
      */
-    public function move_to_next_phase() {
+    public function move_to_next_phase()
+    {
         $resp = $this->send_put($this->endpoint . "cards/" . $this->id . "/next_phase.json", null, null);
 
         $this->assign_results($resp);
@@ -156,7 +161,8 @@ class Card extends APIObject {
     /**
      * @return $this
      */
-    public function move_to_previous_phase() {
+    public function move_to_previous_phase()
+    {
         $resp = $this->send_put($this->endpoint . "cards/" . $this->id . "/previous_phase.json", null, null);
 
         $this->assign_results($resp);
@@ -165,7 +171,8 @@ class Card extends APIObject {
     }
 
 
-    public function update_field_persist($fieldID, $newValue) {
+    public function update_field_persist($fieldID, $newValue)
+    {
         $fieldData = array(
             "card_id" => $this->id,
             "field_id" => $fieldID,
@@ -178,7 +185,8 @@ class Card extends APIObject {
     }
 
 
-    public function update_field($fieldID, $newValue) {
+    public function update_field($fieldID, $newValue)
+    {
         $fieldData = array(
             "card_phase_detail_id" => $this->current_phase_detail->id,
             "field_id" => $fieldID,
@@ -191,7 +199,8 @@ class Card extends APIObject {
     }
 
 
-    public function leave_comment($text) {
+    public function leave_comment($text)
+    {
         $comment = array();
         $comment["comment"]["text"] = $text;
         $comment["comment"]["card_phase_detail_id"] = $this->current_phase_detail->id;
@@ -203,7 +212,8 @@ class Card extends APIObject {
     }
 
 
-    public function create_checklist($checklist_name, $items, $no_layout = true) {
+    public function create_checklist($checklist_name, $items, $no_layout = true)
+    {
         $checklist = (new Checklist())->create_checklist($checklist_name, $this->current_phase_detail->id, $no_layout);
         foreach ($items as $item_name) {
             $checklist->add_option($item_name, $no_layout);

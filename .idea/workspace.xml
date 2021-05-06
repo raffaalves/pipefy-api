@@ -4,7 +4,6 @@
     <list default="true" id="cbfc59cf-dcb0-4c5c-8f8a-a1e16cf65db4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/pipefy-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pipefy-api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pipefy/APIObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/APIObject.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pipefy/Card.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/Card.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pipefy/CardPhaseDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/CardPhaseDetail.php" afterDir="false" />
@@ -17,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/src/Pipefy/Phase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/Phase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pipefy/PhaseDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/PhaseDetail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pipefy/Pipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/Pipe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pipefy/Pipefy.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/Pipefy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pipefy/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,7 +54,8 @@
       <updated>1620319680838</updated>
       <workItem from="1620319684366" duration="944000" />
       <workItem from="1620321633997" duration="1321000" />
-      <workItem from="1620323564865" duration="957000" />
+      <workItem from="1620323564865" duration="1509000" />
+      <workItem from="1620325378654" duration="368000" />
     </task>
     <servers />
   </component>
