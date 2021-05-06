@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 27.01.17
- * Time: 11:59
- */
 
 include_once "Organization.php";
 include_once "Pipe.php";
