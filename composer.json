@@ -1,0 +1,7 @@
+{
+  "name": "pipefy-api",
+  "description": "Pipefy API Non-official",
+  "require": {
+    "php": ">=7.4"
+  }
+}
