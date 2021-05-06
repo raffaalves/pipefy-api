@@ -1,13 +1,7 @@
 <?php
+namespace Pipefy;
 
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 08.02.17
- * Time: 17:48
- */
-
-require_once "APIObject.php";
+use Pipefy\APIObject;
 
 class CardPhaseDetail extends APIObject
 {

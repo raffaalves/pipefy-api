@@ -1,14 +1,7 @@
 <?php
+namespace Pipefy;
 
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 07.02.17
- * Time: 19:12
- */
-
-require_once "APIObject.php";
-
+use Pipefy\APIObject;
 
 class Organization extends APIObject
 {

@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 27.01.17
- * Time: 12:02
- */
+namespace Pipefy;
 
-require_once "APIObject.php";
-
+use Pipefy\APIObject;
 
 class Card extends APIObject {
     public $id;

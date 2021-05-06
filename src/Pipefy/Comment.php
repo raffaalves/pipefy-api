@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 27.01.17
- * Time: 12:04
- */
+namespace Pipefy;
+
+use Pipefy\APIObject;
 
 class Comment extends APIObject {
     public $id;

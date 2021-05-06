@@ -1,4 +1,5 @@
 <?php
+namespace Pipefy;
 
 include_once "Organization.php";
 include_once "Pipe.php";

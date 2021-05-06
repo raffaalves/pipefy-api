@@ -1,14 +1,7 @@
 <?php
+namespace Pipefy;
 
-/**
- * Created by PhpStorm.
- * User: zende
- * Date: 17.02.2017
- * Time: 14:23
- */
-
-require_once "APIObject.php";
-
+use Pipefy\APIObject;
 
 class Checklist extends APIObject
 {

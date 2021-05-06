@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 27.01.17
- * Time: 12:00
- */
+namespace Pipefy;
 
-require_once "Pipefy.php";
-
+use Pipefy\Pipefy;
 
 class APIObject {
 

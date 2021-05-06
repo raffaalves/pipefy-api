@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 27.01.17
- * Time: 12:03
- */
+namespace Pipefy;
 
-require_once "APIObject.php";
-
+use Pipefy\APIObject;
 
 class FieldValue extends APIObject {
     public $id;

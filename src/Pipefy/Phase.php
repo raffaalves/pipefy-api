@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ExE
- * Date: 27.01.17
- * Time: 12:01
- */
+namespace Pipefy;
 
-require_once "APIObject.php";
-
+use Pipefy\APIObject;
 
 class Phase extends APIObject {
     public $id;
