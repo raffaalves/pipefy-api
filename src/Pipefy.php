@@ -38,9 +38,14 @@ class Pipefy extends APIObject
         $dataObject = self::convert($data);
 
         $returnEntity = array_key_first($return);
-        $returnData = self::getFields($return[$returnEntity]);
 
-        $request = '{"query":"mutation {' . $fn . '(input: {' . $dataObject . '}) { '. $returnEntity .' {' . $returnData . '} } }"}';
+        if (is_array($return[$returnEntity])) {
+            $returnData = $returnEntity .' {' . self::getFields($return[$returnEntity]) . '}';
+        } else {
+            $returnData = self::getFields($return);
+        }
+
+        $request = '{"query":"mutation {' . $fn . '(input: {' . $dataObject . '}) { ' . $returnData . ' } }"}';
 
         $resp = $this->send_post($request);
 

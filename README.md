@@ -2,7 +2,7 @@
 PHP wrapper for the Pipefy API
 
 ## Requirements
-PHP 5.6+
+PHP 7.3+
 
 ## Installation
 
