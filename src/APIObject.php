@@ -41,6 +41,9 @@ class APIObject {
         //Convert array to json
         $fields = json_encode($fields, JSON_PRETTY_PRINT);
 
+        $fields = rtrim($fields, "}");
+        $fields = ltrim($fields, "{");
+
         //Remove array indexes
         $fields = preg_replace('/"([^"]+)"\s*:\s*/', '$1:', $fields);
 
@@ -51,9 +54,6 @@ class APIObject {
 
         $fields = preg_replace("/\r|\n/", "", $fields);
 
-        $fields = rtrim($fields, "}");
-        $fields = ltrim($fields, "{");
-
         $fields = trim($fields);
 
         return $fields;
@@ -61,8 +61,13 @@ class APIObject {
 
     public static function getFields(array $fields) : string
     {
-        $fields = array_merge(['id'], $fields);
-        $fields = implode(',', $fields);
+        if (is_array($fields)) {
+            $fields = self::convert($fields);
+            $fields = str_replace(':{', '{', $fields);
+            $fields = str_replace('\"', '', $fields);
+        } else {
+            $fields = implode(',', $fields);
+        }
 
         return $fields;
     }
