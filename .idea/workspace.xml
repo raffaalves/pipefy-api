@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbfc59cf-dcb0-4c5c-8f8a-a1e16cf65db4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/APIObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pipefy.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pipefy.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,7 @@
       <workItem from="1620325378654" duration="368000" />
       <workItem from="1624648638164" duration="573000" />
       <workItem from="1628162964612" duration="441000" />
+      <workItem from="1651157116432" duration="138000" />
     </task>
     <servers />
   </component>

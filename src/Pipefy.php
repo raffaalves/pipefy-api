@@ -33,25 +33,29 @@ class Pipefy extends APIObject
      * @param array $return
      * @return string
      */
-    public function mutation(string $fn, array $data, array $return = [])
+    public function mutation(string $fn, array $data, $return = [])
     {
         $dataObject = self::convert($data);
 
-        $returnEntity = array_key_first($return);
+        if (is_array($return)) {
+            $returnEntity = array_key_first($return);
 
-        if (is_array($return[$returnEntity])) {
-            $returnData = $returnEntity .' {' . self::getFields($return[$returnEntity]) . '}';
+            if (is_array($return[$returnEntity])) {
+                $returnData = $returnEntity .' {' . self::getFields($return[$returnEntity]) . '}';
+            } else {
+                $returnData = self::getFields($return);
+            }
         } else {
-            $returnData = self::getFields($return);
+            $returnData = $return;
         }
 
         $request = '{"query":"mutation {' . $fn . '(input: {' . $dataObject . '}) { ' . $returnData . ' } }"}';
 
         $resp = $this->send_post($request);
 
-        $this->assign_results($resp);
+        // $this->assign_results($resp);
 
-        return $this;
+        return json_decode($resp);
     }
 
     public static function get_auth_headers() {

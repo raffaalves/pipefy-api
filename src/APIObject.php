@@ -50,7 +50,7 @@ class APIObject {
         $fields = str_replace('"', '\"', $fields);
 
         //Replace square brackets to curly brackets
-        $fields = str_replace(['[',']'], ['{','}'], $fields);
+        //$fields = str_replace(['[',']'], ['{','}'], $fields);
 
         $fields = preg_replace("/\r|\n/", "", $fields);
 
@@ -81,14 +81,16 @@ class APIObject {
             $resp = json_decode($resp);
         }
 
-        foreach ($resp as $key => $val)
-        {
-            if (property_exists(get_called_class(), $key))
+        if (is_array($resp)) {
+            foreach ($resp as $key => $val)
             {
-                $this->$key = $val;
-            }
-            else {
-                $this->{$key} = $val;
+                if (property_exists(get_called_class(), $key))
+                {
+                    $this->$key = $val;
+                }
+                else {
+                    $this->{$key} = $val;
+                }
             }
         }
     }
