@@ -71,4 +71,16 @@ class Pipefy extends APIObject
         else
             throw new Exception("Pipefy API is not inited. You should create an instance of Pipefy first");
     }
+
+    /**
+     * @param int $id
+     * @return string
+     */
+    public function cardDelete($id)
+    {
+        $request = '{"query":"mutation {\\r\\n  deleteCard(input: {id: '.$id.'}) {\\r\\n    success\\r\\n  }\\r\\n}","variables":{}}';
+        $resp = $this->send_post($request);
+        $this->assign_results($resp);
+        return $this;
+    }
 }
